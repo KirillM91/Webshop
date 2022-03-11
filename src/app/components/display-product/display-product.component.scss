@@ -1,0 +1,112 @@
+.product-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  
+  gap: 3rem;  
+  margin: 1rem;
+  margin-top: 8rem;
+
+  
+
+  .product{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 5px 0;
+    border-radius: 5px;    
+    font-size: 1.2rem;
+    font-family: sans-serif;
+    overflow: hidden;
+    text-align: center;
+
+    .product-name{ 
+      margin: 0;
+      display: block;
+      width: 97%;  
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;    
+      padding: 10px;
+      cursor: default;
+      border-top: 8px solid #4b0c86;
+    }
+    
+
+    .product-price{
+     margin: 0;
+     margin-bottom: 0.5rem;
+     font-weight: 700;
+     color: #ee335b;
+     text-align: right;
+     margin-right: 1.5rem;    
+    }
+
+    .product-image{
+      position: relative;      
+      overflow: hidden; 
+
+      .product-description,
+      .product-release-year{
+        position: absolute;
+        display: none;
+        color:white;        
+      }
+
+      .product-description{
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 1rem;
+      }
+
+      .product-release-year{
+        top: 3%;
+        left: 5%;
+        margin-top: 0;
+      }
+
+      img{ 
+        display: block;           
+        width: 100%;
+        aspect-ratio: 2/3;
+        object-fit: cover;
+        object-position: center;        
+      }
+
+      .buy-button{
+        position: absolute;
+        display: none;
+        bottom: 0;        
+        width: 70%;
+        border: none;
+        height: 2.2rem; 
+        border-radius: 5px;
+        bottom: 5%;  
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2rem; 
+        padding: 0.2em;
+        cursor: pointer;         
+      }
+    }
+  }
+
+  .product:hover{    
+
+    .product-image{
+
+
+      .product-description,
+      .product-release-year{
+        display: block;
+      }
+
+      img{
+        filter: brightness(30%);
+        transform: scale(1.03);
+        transition: all 350ms;
+      }
+
+      .buy-button{
+        display: block;
+      }
+    }
+  }
+}

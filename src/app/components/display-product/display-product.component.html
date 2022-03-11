@@ -1,0 +1,19 @@
+<div class="product-grid">
+  
+  <div class="product" *ngFor="let p of products; let i = index">  
+
+    <div class="product-image"> 
+      <img [src] = "p.imageUrl" alt="Product Image">    
+      <p class="product-description">{{ p.description }}</p>
+      <p class="product-release-year">Release year: {{ p.year }}</p>
+      <button class="buy-button" (click)="addItemToBuy(p.name, p.price, p.id)">Buy</button>
+    </div> 
+
+    <!-- <h3 [ngStyle]="lineColor(i)" class="product-name" title="{{ p.name }}">{{ p.name }}</h3> -->
+    <h3 class="product-name" title="{{ p.name }}">{{ p.name }}</h3>   
+
+    <p class="product-price">{{ p.price }} Kr</p>
+  </div>
+</div>
+
+

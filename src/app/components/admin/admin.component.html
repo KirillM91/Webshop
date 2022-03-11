@@ -1,0 +1,10 @@
+<p><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Back</a></p>
+<div *ngFor="let p of postedOrders; let i = index">
+    <h3>Order ID: {{ p.id }}</h3>
+    <p>Kund: {{ p.createdBy }}</p>
+    <p>Skapad den: {{ p.created }}</p>
+    <p>Artiklar:</p>
+    <p *ngFor="let id of postedOrders[i].orderRows">{{ id.productId }}</p>
+    <button (click)="deleteOrder(p.id, i)">Delete Order</button>
+</div>
+

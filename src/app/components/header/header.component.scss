@@ -1,0 +1,135 @@
+header {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // background-image: linear-gradient(90deg,rgb(75, 12, 134),rgb(233, 153, 5));
+  background-color: #4b0c86;
+  height: 5rem;
+  box-sizing: border-box;
+  z-index: 10;
+  width: 100vw;
+  top: 0;
+  color: white;
+
+  .logo .active{
+    margin-left: 20px;
+    text-decoration: none; 
+    color: white; 
+  }
+
+  .search-field{  
+    position: absolute;
+    --search-field-color: #ee335b; 
+    height: 1.9rem;  
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--search-field-color);
+    left: 50%;
+    transform: translateX(-52%);    
+    &:hover{
+      border: 1px solid #bb2747;
+    }
+    &:active{
+      border: 1px solid #941e38;
+    }
+
+    .search-bar{
+      height: 28px;
+      border: none;
+      width: 30vw;
+      
+    }
+    .search-button{
+      height: 30px;
+      width: 30px;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      background-color: var(--search-field-color);
+      font-size: 0.75rem;   
+      pointer-events: auto;   
+    }    
+
+    .search-button:hover{
+      background-color: #bb2747;
+    }
+
+    .search-button:active{
+      background-color: #941e38;
+    }
+  }
+  
+  .menu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 20px;
+
+    .cart,
+    .checkout,
+    .admin{
+      margin: 0 1rem;
+      cursor: pointer;      
+    }
+
+    .cart{
+      position: relative;
+
+      .number-of-items-in-cart{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        // display: inline-block;
+        background-color: #ee335b;
+        height: 1rem;
+        width: 1rem;
+        font-size: 0.9rem;
+        border-radius: 50%;
+        text-align: center;
+        top: -5px;
+        right: -17px;        
+      }
+    }
+  }
+}
+
+.categories{
+  position: relative;
+  top: 5rem;  
+  background-color: #6d12c2;
+  height: 2rem;
+  
+  ul{
+    display: inline-flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    li{
+      // background-color: rgb(225, 255, 195);
+      width: clamp(90px, 10vw, 200px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      // box-shadow: 0 2px 5px 0;  
+      box-sizing: border-box;
+      font-family: sans-serif;
+      font-weight: bold;
+      color: aliceblue;
+      
+    }
+
+    li:hover{
+      border-bottom: 3px solid #ee335b;
+    }
+  }
+}

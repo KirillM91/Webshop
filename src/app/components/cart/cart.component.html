@@ -1,0 +1,19 @@
+<div class="cart-body" [class]="cartVisible ? cartBodyHidden : cartBodyVisible">
+    <div class="cart-product-container" *ngFor="let c of cartItem; let i=index">
+        <p>
+            {{ c.name }} 
+            <span class="product-price">
+                Pris: {{ c.price }}
+            </span>
+        </p>
+        <button class="remove-from-cart-button" (click)="removeCartItem(i)">Remove</button>
+    </div>
+    <div class="total-price">
+        <p>
+            Total price: {{ totalPrice }}
+        </p>
+    </div>
+
+    <button class="cart-checkout-button" routerLink="/checkout" routerLinkActive="active">To check-out</button>
+
+</div>>

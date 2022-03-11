@@ -1,0 +1,41 @@
+<header>
+  <div class="logo">
+    <a routerLink="" 
+       routerLinkActive="active" 
+       [routerLinkActiveOptions]={exact:true}
+       style="display: inline-block; text-decoration:none; color:white;  margin-left: 20px;">
+       LOGO
+    </a>
+  </div>
+  
+  <div class="search-field">
+    <input class="search-bar" placeholder="Search for a movie"/>
+    <button class="search-button">🔎︎</button>
+  </div>
+
+  <div class="menu">
+
+    <div class="cart" (click)="toggleCart()">  
+      CART   
+      <div class="number-of-items-in-cart">
+        <span >{{ numberOfItemsInCart }}</span>  
+      </div> 
+    </div>
+
+    <div class="checkout">  
+      <a routerLink="/checkout" routerLinkActive="active" style="display: inline-block; text-decoration:none; color:white">CHECKOUT</a>      
+    </div>
+
+    <div class="admin">  
+      <a routerLink="/admin" routerLinkActive="active" style="display: inline-block; text-decoration:none; color:white">admin</a>      
+    </div>
+  </div>
+
+</header>
+
+<div class="categories">
+  <ul>
+    <li *ngFor="let c of categories">{{ c.name }}</li>
+  </ul>
+</div>
+

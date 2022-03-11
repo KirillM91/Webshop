@@ -1,0 +1,71 @@
+.cart-body-visible {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+
+.cart-body-hidden {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.cart-body {
+  position: absolute;
+  height: 100vh;
+  width: clamp(300px, 50vw, 700px);
+  top: 5rem;
+  right: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#300855dc), to(#5e11a7dc));
+  background-image: linear-gradient(#300855dc, #5e11a7dc);
+  position: fixed;
+  color: white;
+  border-top: 2px solid #2b2300;
+  font-family: sans-serif;
+}
+
+.cart-body .cart-product-container {
+  background-color: #240641dc;
+  padding: 10px 30px;
+  margin: 10px 0;
+}
+
+.cart-body .cart-product-container p .product-price {
+  position: absolute;
+  display: inline-block;
+  right: 30px;
+}
+
+.cart-body .total-price p {
+  text-align: right;
+  padding-right: 30px;
+  color: #ee335b;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.cart-body .cart-checkout-button {
+  position: absolute;
+  right: 30px;
+  height: 1.5rem;
+  padding: 0 10px;
+}
+
+.remove-from-cart-button,
+.cart-checkout-button {
+  border: none;
+  border-radius: 2px;
+}
+
+.remove-from-cart-button:hover,
+.cart-checkout-button:hover {
+  background-color: #bb2747;
+}
+
+.remove-from-cart-button:active,
+.cart-checkout-button:active {
+  background-color: #941e38;
+}
+/*# sourceMappingURL=cart.component.css.map */

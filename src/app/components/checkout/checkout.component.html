@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<main>
+    <section class="product-section">
+        <p><a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]={exact:true}>Back</a></p>
+        <h3>Your Items:</h3>
+        <div class="product-container" *ngFor="let c of cartItem; let i=index">
+            <p>{{ c.name }}</p>
+            <p>Price: {{ c.price }}</p>
+            
+            <button class="remove-from-cart-button" (click)="removeCartItem(i)">Remove</button>
+        </div>
+        <div class="total-price">
+            <p>
+                Total price: {{ totalPrice }}
+            </p>
+        </div>
+    </section>
+    
+    <section class="form-section">
+        <form #orderData = "ngForm" (ngSubmit) = "getUserData(orderData.value)">
+            <p class="disclamer">For the purpose of this excercise, only <span>"name"</span> and <span>"payment method"</span> are used, but not required.</p>
+            <label for="name">Name:</label>
+            <br>
+            <input ngModel id="name" name="createdBy" type="text" placeholder=""/>
+            <br>
+
+            <label for="last-name">Last name:</label>
+            <br>
+            <input id="last-name" name="last-name" type="text" placeholder=""/>            
+            <br>
+
+
+
+            <label for="city">City:</label>
+            <br>
+            <input id="city" name="city" type="text" placeholder=""/>
+            <br>
+
+            <label for="zip">Zip code:</label>
+            <br>
+            <input id="zip" name="zip" type="text" placeholder=""/>
+            <br>
+
+            <label for="adress">Adress:</label>
+            <br>
+            <input id="adress" name="adress" type="text" placeholder=""/>
+            <br>
+
+            <label for="payment-method">Payment method:</label>
+            <br>
+            <select ngModel name="paymentMethod" id="payment-method">
+              <option value="swish">Swish</option>
+              <option value="bank transfer">Bank transfer</option>
+              <option value="paypal">Paypal</option>
+              <option value="soul">Your soul</option>
+            </select> 
+            <br>
+            <br>
+
+            <button type="submit">Send order!</button>
+
+        </form>
+    </section>
+</main>
